@@ -115,7 +115,7 @@ class _ReportFormScreenState extends State<ReportFormScreen> {
                               fontWeight: FontWeight.bold, fontSize: 16)),
                       const SizedBox(height: 8),
                       DropdownButtonFormField<int>(
-                        value: _selectedStationId,
+                        initialValue: _selectedStationId,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'เลือกหน่วยเลือกตั้ง',
@@ -158,7 +158,7 @@ class _ReportFormScreenState extends State<ReportFormScreen> {
                               fontWeight: FontWeight.bold, fontSize: 16)),
                       const SizedBox(height: 8),
                       DropdownButtonFormField<int>(
-                        value: _selectedTypeId,
+                        initialValue: _selectedTypeId,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText: 'เลือกประเภทความผิด',

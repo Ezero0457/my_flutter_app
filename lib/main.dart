@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 import 'constants/app_constants.dart';
+import 'helpers/tf_lifehelpr.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await TFLiteHelper.init();
   runApp(const MyApp());
 }
 

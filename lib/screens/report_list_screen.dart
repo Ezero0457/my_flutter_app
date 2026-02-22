@@ -127,7 +127,7 @@ class _ReportListScreenState extends State<ReportListScreen> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 4),
                               decoration: BoxDecoration(
-                                color: severityColor.withOpacity(0.1),
+                                color: severityColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(8),
                                 border: Border.all(color: severityColor),
                               ),

@@ -96,7 +96,6 @@ class DatabaseHelper {
       'province': 'นครศรีธรรมราช',
     });
 
-    // ข้อมูลตัวอย่าง violation_type
     await db.insert(AppConstants.tableViolationType, {
       'type_id': 1,
       'type_name': 'ซื้อสิทธิ์ขายเสียง (Buying Votes)',
@@ -123,7 +122,6 @@ class DatabaseHelper {
       'severity': 'High',
     });
 
-    // ข้อมูลตัวอย่าง incident_report
     await db.insert(AppConstants.tableIncidentReport, {
       'station_id': 101,
       'type_id': 1,

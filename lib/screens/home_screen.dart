@@ -3,6 +3,7 @@ import '../helpers/database_helper.dart';
 import '../constants/app_constants.dart';
 import 'report_form_screen.dart';
 import 'report_list_screen.dart';
+import 'classifier_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -48,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Dashboard Cards
+
             const Text(
               'แดชบอร์ด',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -80,7 +81,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Menu buttons
             const Text(
               'เมนู',
               style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
@@ -97,6 +97,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   context,
                   MaterialPageRoute(
                       builder: (context) => const ReportFormScreen()),
+                );
+                _loadDashboardData();
+              },
+            ),
+            const SizedBox(height: 12),
+            _buildMenuButton(
+              context,
+              'ตรวจสอบภาพ',
+              'ตรวจสอบภาพที่ถูกส่งมา',
+              Icons.add_circle_outline,
+              Colors.green,
+              () async {
+                await Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ImageClassifierScreen()),
                 );
                 _loadDashboardData();
               },
@@ -163,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
         leading: CircleAvatar(
-          backgroundColor: color.withOpacity(0.1),
+          backgroundColor: color.withValues(alpha: 0.1),
           child: Icon(icon, color: color),
         ),
         title: Text(title,
